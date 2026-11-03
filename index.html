@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>石油勘探开发的智能化可能性地图</title>
+<meta name="description" content="按石油作业链条逐环节展示适合机器学习、优化算法等智能方法的候选场景，标注 AI 介入点、数据条件与难度等级；带可运行的案例示范。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23107360'/%3E%3Cpath d='M5 23l8-10 5 4 4-7 5 4' fill='none' stroke='white' stroke-width='2.5'/%3E%3C/svg%3E">
+
+<link rel="stylesheet" href="assets/core/tokens.css?v=20261102v11">
+<link rel="stylesheet" href="assets/core/layout.css?v=20261026b">
+<link rel="stylesheet" href="assets/core/ui.css?v=20261102v11">
+</head>
+<body>
+
+<div id="view">
+  <main class="wrap" style="padding:120px 0">
+    <div class="empty"><b>正在加载</b>如果这行字一直不消失，说明脚本没有正确执行，
+    请检查浏览器控制台。</div>
+  </main>
+</div>
+
+<noscript>
+  <div class="wrap" style="padding:80px 0">
+    <div class="empty"><b>需要启用 JavaScript</b>本站是纯前端渲染的，所有页面由本地脚本生成。</div>
+  </div>
+</noscript>
+
+<!-- =========================================================
+     脚本加载顺序（改这里之前先读 docs/如何添加新案例.md）
+     1. data.js         场景元数据
+     2. registry.js     案例注册表
+     3. kit.js          渲染工具箱
+     4. cases/*         案例插件 —— 新增案例加在这一段
+     5. case-demo-host  示范宿主（整页 iframe / 模块 Shadow DOM）
+     6. case-upload     案例包导入（读 localStorage，必须在 shell 前）
+     7. shell.js        外壳，必须最后
+     ========================================================= -->
+<script src="assets/data.js?v=20261026b"></script>
+<script src="assets/core/registry.js?v=20261022i"></script>
+<script src="assets/core/kit.js?v=20261027a"></script>
+
+<script src="assets/cases/welllog-layer.case.js?v=20261102v11"></script>
+<script src="assets/cases/welllog-layer.demo.js?v=20261102v11"></script>
+<script src="assets/cases/co1-fuzzy-selection.case.js?v=20261102v11"></script>
+<script src="assets/cases/co2-casing-pareto.case.js?v=20261102v11"></script>
+<script src="assets/cases/co3-integrity-risk.case.js?v=20261102v11"></script>
+<script src="assets/cases/co4-sleeve-control.case.js?v=20261102v11"></script>
+<script src="assets/cases/p1-storage-perforation.case.js?v=20261102v11"></script>
+<script src="assets/cases/visual-refresh.js?v=20261102v11"></script>
+<!-- ↑ 新案例加在这里：<script src="assets/cases/你的案例.case.js"></script> -->
+
+<!-- 上传的案例包（localStorage）在这里恢复注册，必须在 shell.js 之前 -->
+<script src="assets/core/case-demo-host.js?v=20261102v11"></script>
+<script src="assets/core/paper-store.js?v=20261026a"></script>
+<script src="assets/core/case-zip.js?v=20261102zip"></script>
+<script src="assets/core/case-upload.js?v=20261102zip"></script>
+
+<script src="assets/core/admin.js?v=20261022i"></script>
+
+<script src="assets/core/shell.js?v=20261102zip"></script>
+
+</body>
+</html>
